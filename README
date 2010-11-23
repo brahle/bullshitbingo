@@ -1,0 +1,8 @@
+The idea of this project is to implement Bullshit Bingo
+(http://www.companyculture.com/topics/BullshitBingo.htm). I'm doing this in
+my spare time, so it isn't expected to be done very soon.
+
+Considening that I'm just learining Python and Django, the code will be
+messy, but I will try to make it as expandable as possible. My intention is
+to make other word games, like Memory easy to implement.
+
