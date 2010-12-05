@@ -1,6 +1,8 @@
 from django.contrib.auth.models import User
 from django.db import models
 
+from privacy.models import PrivacyControls
+
 class Author(models.Model):
     GENDER_CHOICES = (
         ('U', 'Unknown'),
@@ -20,20 +22,7 @@ class Author(models.Model):
         max_length=1, 
         choices=GENDER_CHOICES
     )
-    private = models.BooleanField(
-        "Is the information about this author private",
-        default=False
-    )
-    allowedUsers = models.ManyToManyField(
-        User,
-        blank=True,
-        related_name='allowedAuthors'
-    )
-    blockedUsers = models.ManyToManyField(
-        User, 
-        blank=True, 
-        related_name='blockedAuthors'
-    )
+    privacyControls = models.OneToOneField(PrivacyControls)
     class Meta:
         unique_together = ('firstName', 'lastName')
     def __unicode__(self):
