@@ -1,9 +1,7 @@
-from django.contrib.auth.models import User
 from django.db import models
 
 from author.models import Author
 from connection.models import ConnectionDetails
-from privacy.models import PrivacyControls
 from situation.models import Situation
 
 class Phrase(models.Model):
@@ -16,15 +14,7 @@ class Phrase(models.Model):
         Author, 
         blank=True,
         related_name='phrases',
-        through='Connection_Author_Phrase'
     )
-    situations = models.ManyToManyField(
-        Situation,
-        blank=True,
-        related_name='phrases',
-        through='Connection_Phrase_Situation'
-    )
-    privacyControls = models.OneToOneField(PrivacyControls)
     def __unicode__(self):
         return "%s" % (self.text)
 

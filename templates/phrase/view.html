@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block page_title %}View Phrase{% endblock %}
+
+{% block page_content %}
+<div class="phrase">
+  <div class="text">"{{ phrase.text }}"</div>
+  <div class="usedby">
+    <div>
+      Used by: 
+      {% for author in phrase.authors.all %}
+        <span class="author">{{ author }}</div>
+      {% endfor %}
+  </div>
+</div>
+<a href="/view/phrase/list/">View list</a>
+{% endblock %}

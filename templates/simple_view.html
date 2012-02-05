@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+{% if failed %} 
+  <div class="failed">Not enough entires in the database! Need {{ count }} more item{{ count|pluralize }}!</div>
+{% else %}
+  <table>
+    {% for quotes_row in quotes %}
+      <tr>
+      {% for quote in quotes_row %}
+        <td>{{ quote }}</td>
+      {% endfor %}
+      </tr>
+    {% endfor %}
+  </table>
+{% endif %}
+
+<div class="add">
+  <a href="/view/author/list">List authors</a> <br />
+  <a href="/add/author">Add an author</a> <br />
+</div>
+
+<div class="add">
+  <a href="/view/phrase/list">List phrases</a> <br />
+  <a href="/add/phrase">Add a phrase</a> <br />
+</div>
+ 
+{% endblock %}

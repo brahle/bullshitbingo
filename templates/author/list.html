@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block page_title %}List Authors{% endblock %}
+
+{% block page_content %}
+<a href="/add/author/">Add an author</a>
+<ul>
+  {% for author in authors %}
+    <li><a href="/view/author/{{ author.id }}/">{{ author.name }}</a></li>
+  {% endfor %}
+</ul>
+{% endblock %}

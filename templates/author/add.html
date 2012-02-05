@@ -1,15 +1,4 @@
-{% extends "base.html" %}
+{% extends "form.html" %}
 
-{% block page_title %}
-Add an author
-{% endblock %}
-
-{% block page_content %}
-<form method="post" action="/add/author/">
-  {% csrf_token %}
-  <table>
-    {{ author_form }}
-  </table>
-  <input type="submit" value="submit" />
-</form>
-{% endblock %}
+{% block page_title %}Add an Author{% endblock %}
+{% block action %}/add/author/{% endblock %}

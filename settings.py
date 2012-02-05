@@ -7,7 +7,7 @@ DJANGO_ROOT = os.path.dirname(os.path.realpath(django.__file__))
 SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
 #### end taken
 
-# Django settings for bullshit_bingo project.
+# Django settings for bullshitbingo project.
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -85,7 +85,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
 )
 
-ROOT_URLCONF = 'bullshit_bingo.urls'
+ROOT_URLCONF = 'bullshitbingo.urls'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
@@ -109,6 +109,7 @@ INSTALLED_APPS = (
     'phrase',
     'privacy',
     'situation',
+    'generator'
 )
 
 

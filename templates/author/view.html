@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block page_title %}View Author{% endblock %}
+
+{% block page_content %}
+<p>
+  {% if author.nickname %}
+    {{ author.nickname }} ({{ author.name }})
+  {% else %}
+    {{ author.name }}
+  {% endif %}
+  ({{ author.gender }})
+</p>
+<a href="/view/author/list/">View list</a>
+{% endblock %}

@@ -18,7 +18,6 @@ class Situation(models.Model):
         related_name='situations',
         through='Connection_Author_Situation'
     )
-    privacyControls = models.OneToOneField(PrivacyControls)
     def __unicode__(self):
         return "%s" % (self.name)
 

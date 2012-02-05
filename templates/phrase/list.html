@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block page_title %}List Phrases{% endblock %}
+
+{% block page_content %}
+<a href="/add/phrase/">Add a phrase</a>
+<ul>
+  {% for phrase in phrases %}
+    <li><a href="/view/phrase/{{ phrase.id }}/">{{ phrase.text }}</a></li>
+  {% endfor %}
+</ul>
+{% endblock %}
